@@ -1,0 +1,29 @@
+ALGORITHM checkpoint_1
+VAR
+i:INTEGER:=0;
+count_words:INTEGER:=1;
+cont_voyels:INTEGER :=0;
+s:string;
+BEGIN
+"Bonjour je suis Amal."
+/* the number of words in a string  */
+
+Write(write type of s)
+Read(s);
+WHILE (s[i]<>0 ".") DO
+IF (s[i]:=" ") THEN
+count_words = count_words+1
+END_IF
+/* the number of voyels in a string*/
+
+IF (s[i]:="a" OR s[i]:="A" OR s[i]:="e" OR s[i]:="i" OR s[i]:="o" OR s[i]:="u" OR s[i]:="y") THEN
+cont_voyels= cont_voyels+1
+END_IF
+/*The length of the sentence*/
+i:=i+1
+END_WHILE
+Write("the number of words in a string:",count_words )
+Write("the number of voyels in a string:",count_voyels )
+Write("The length of the sentence:",count_words )
+
+END
