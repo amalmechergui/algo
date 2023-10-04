@@ -1,0 +1,38 @@
+ALGORITHM find_sum
+VAR
+    i,j:INTEGER:=0;
+    tab1: ARRAY_OF INTEGER[n1];
+    tab2: ARRAY_OF INTEGER[n2];
+    tab:ARRAY_OF INTEGER[n1+n2];
+    sum_distinc,sum_column:INTEGER:=0;
+    found:BOOLEAN;
+BEGIN
+
+Write(type the length for tab1 )
+read(n1)
+Write(type the length for tab1 )
+read(n2)
+FOR K FROM 0 TO n1-1 STEP 1 DO
+read(tab1[K])
+END_FOR
+FOR L FROM 0 TO n2-1 STEP 1 DO
+read(tab2[K])
+END_FOR
+tab:= concat(tab1,tab2)
+
+FOR i FROM 0 TO tab.length-1 STEP 1 DO
+found:=False
+
+FOR j FROM 0 TO tab.length-1 STEP step 1 DO
+IF (tab[i]=tab[j] AND i<>j) THEN
+    found:= True
+    sum_column= sum_column + tab[j]
+ELSE_IF (tab[i]<>tab[j] AND i<>j) THEN
+    found:=False
+    sum_distinc= sum_distinc + tab[j]
+END_IF
+  END_FOR
+END_FOR
+Write("the sum of distinc is",sum_distinc)
+Write("the sum of column is",sum_column)
+END
